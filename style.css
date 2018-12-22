@@ -1,33 +1,47 @@
 body{
-  overflow-x: hidden;
+  overflow-x:hidden;
 }
 
-h1 {
-  text-align: center;
+h1{
+  text-align:center;
 }
 
-h2 {
-  text-align: center;
+h2{
+  text-align:center;
 }
 
 h3{
-  font-size: 1.75em;
-  text-align: center;
+  font-size:1.75em;
+  text-align:center;
 }
 
-i{
-  padding-left: 0.5em;
+footer{
+    color: #fff;
+    background-color: #343a40;
+    margin-top:50px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+
+footer p{
+    text-align: center;
+    padding-top:10px;
+    padding-bottom:10px;
 }
 
 .row{
-  padding-top: 1em;
+  padding-top:1em;
+}
+
+.navbar-brand{
+    font-size:1.25em;
 }
 
 .table-wrapper{
   width:95%;
-  max-height: 600px;
-  overflow-y: auto;
-  -ms-overflow-style: -ms-autohiding-scrollbar;
+  max-height:600px;
+  overflow-y:auto;
+  -ms-overflow-style:-ms-autohiding-scrollbar;
 }
 
 .btn-place{
@@ -35,28 +49,41 @@ i{
 }
 
 .btn-girls{
-  text-align: center;
-  color: white;
-  background-color: #ff4d88;
-  border-color: #ff4d88;
+  text-align:center;
+  color:white;
+  background-color:#ff4d88;
+  border-color:#ff4d88;
 }
 
 .btn-boys{
-  text-align: center;
-  color: white;
-  background-color: #1a75ff;
-  border-color: #1a75ff;
+  text-align:center;
+  color:white;
+  background-color:#1a75ff;
+  border-color:#1a75ff;
 }
 
 .btn-modal-title{
   padding-left:20px;
 }
 
-#upperBtns {
-  text-align: right;
+.fa-check{
+  padding-left:0.5em;
 }
-@media only screen and (max-width: 992px) {
-  #upperBtns {
-    text-align: center;
+
+#title{
+    padding-left:0px;
+    padding-right:0px;
+    color:white;
+}
+
+#upperBtns{
+  text-align:right;
+  padding-left:0px;
+  padding-right:0px;
+}
+@media only screen and (max-width:992px){
+  #upperBtns{
+    text-align:center;
+    padding-top:5px;
   }
 }
