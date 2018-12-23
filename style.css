@@ -63,12 +63,13 @@ footer p {
   -ms-overflow-style: -ms-autohiding-scrollbar;
 }
 
+/*
 @media only screen and (max-width:768px) {
   .table-wrapper {
-    /*width: 100%; not needed?*/
+    width: 100%; not needed?
   }
 }
-
+*/
 .btn-place {
   width: 100%;
 }
