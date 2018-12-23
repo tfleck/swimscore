@@ -1,6 +1,5 @@
 html {
   height: 100%;
-  width: 100%;
 }
 
 body {
@@ -31,7 +30,6 @@ footer {
   color: #fff;
   background-color: #343a40;
   flex-shrink: 0;
-  width: 100%;
   margin-top: 75px;
   padding-top: 15px;
   padding-bottom: 10px;
@@ -65,9 +63,9 @@ footer p {
 
 @media only screen and (max-width:768px) {
   .table-wrapper {
+    width: 99%;
     padding-left: 15px;
     padding-right: 15px;
-    width: 100%;
   }
 }
 
@@ -107,7 +105,7 @@ footer p {
 
 @media only screen and (max-width:768px) {
   .modal-lg {
-    max-width: 95%;
+    max-width: 75%;
   }
 }
 
