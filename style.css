@@ -1,89 +1,116 @@
-body{
-  overflow-x:hidden;
+html {
+  height: 100%;
 }
 
-h1{
-  text-align:center;
+body {
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
-h2{
-  text-align:center;
+main {
+  flex: 1 0 auto;
 }
 
-h3{
-  font-size:1.75em;
-  text-align:center;
+h1 {
+  text-align: center;
 }
 
-footer{
-    color: #fff;
-    background-color: #343a40;
-    margin-top:50px;
-    padding-top: 15px;
-    padding-bottom: 10px;
+h2 {
+  text-align: center;
 }
 
-footer p{
+h3 {
+  font-size: 1.75em;
+  text-align: center;
+}
+
+footer {
+  color: #fff;
+  background-color: #343a40;
+  flex-shrink: 0;
+  width: 100%;
+  margin-top: 50px;
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+
+footer p {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.row {
+  padding-top: 1em;
+}
+
+.navbar {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.navbar-brand {
+  font-size: 1.25em;
+}
+
+.table-wrapper {
+  width: 95%;
+  max-height: 600px;
+  overflow-y: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.btn-place {
+  width: 100%;
+}
+
+.btn-girls {
+  text-align: center;
+  color: white;
+  background-color: #ff4d88;
+  border-color: #ff4d88;
+}
+
+.btn-boys {
+  text-align: center;
+  color: white;
+  background-color: #1a75ff;
+  border-color: #1a75ff;
+}
+
+.btn-modal-title {
+  padding-left: 20px;
+}
+
+.fa-check {
+  padding-left: 0.5em;
+}
+
+.alert {
+  text-align: center;
+}
+
+#infobox {
+  padding-left: 0px;
+}
+
+#title {
+  padding-left: 0px;
+  padding-right: 0px;
+  color: white;
+}
+
+#upperBtns {
+  text-align: right;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+@media only screen and (max-width:992px) {
+  #upperBtns {
     text-align: center;
-    padding-top:10px;
-    padding-bottom:10px;
-}
-
-.row{
-  padding-top:1em;
-}
-
-.navbar-brand{
-    font-size:1.25em;
-}
-
-.table-wrapper{
-  width:95%;
-  max-height:600px;
-  overflow-y:auto;
-  -ms-overflow-style:-ms-autohiding-scrollbar;
-}
-
-.btn-place{
-  width:100%;
-}
-
-.btn-girls{
-  text-align:center;
-  color:white;
-  background-color:#ff4d88;
-  border-color:#ff4d88;
-}
-
-.btn-boys{
-  text-align:center;
-  color:white;
-  background-color:#1a75ff;
-  border-color:#1a75ff;
-}
-
-.btn-modal-title{
-  padding-left:20px;
-}
-
-.fa-check{
-  padding-left:0.5em;
-}
-
-#title{
-    padding-left:0px;
-    padding-right:0px;
-    color:white;
-}
-
-#upperBtns{
-  text-align:right;
-  padding-left:0px;
-  padding-right:0px;
-}
-@media only screen and (max-width:992px){
-  #upperBtns{
-    text-align:center;
-    padding-top:5px;
+    padding-top: 5px;
   }
 }
