@@ -1,10 +1,8 @@
-jQuery(document).ready(function($) {
-  var cookies = readCookies();
-  loadRuleset(cookies[0], cookies[1]);
-  if (cookies[2]) {
-    $("#infoModal").modal('toggle');
-  }
-});
+var cookies = readCookies();
+loadRuleset(cookies[0], cookies[1]);
+if (cookies[2]) {
+  $("#infoModal").modal('toggle');
+}
 
 function loadRuleset(ruleset, times) {
   var request = $.get(ruleset + '.html');
@@ -39,7 +37,10 @@ function addListeners() {
     $("#rulesetChoices").find("i").remove();
     $(event.currentTarget).html($(event.currentTarget).attr("long-name") + `<i class="fas fa-check"></i>`);
     var cookies = readCookies();
-    loadRuleset($(event.currentTarget).attr("ruleset"), cookies[1]);
+    updateCookies($(event.currentTarget).attr("ruleset"), cookies[1]);
+    $("body").fadeOut(200, function(done) {
+      location.reload();
+    });
   });
   $("#showGirlsTimes").click(function(event) {
     $("#boysDistrictTimes").fadeOut(300, function(event) {
