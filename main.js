@@ -1,6 +1,9 @@
 jQuery(document).ready(function($) {
   var cookies = readCookies();
   loadRuleset(cookies[0], cookies[1]);
+  if (cookies[2]) {
+    $("#infoModal").modal('toggle');
+  }
 });
 
 function loadRuleset(ruleset, times) {
@@ -19,7 +22,7 @@ function loadRuleset(ruleset, times) {
   request.fail(function(error) {
     $("#container").html(`
             <div class="alert alert-danger" role="alert">
-                There was an error trying to load the scoreboard, try reloading or selecting another scoreboard from the dropdown
+                There was an error trying to load the scoreboard, try reloading the page, or check your internet connection
             </div>`);
     console.log("error loading ruleset");
     addListeners();
@@ -58,18 +61,26 @@ function readCookies() {
   var cookies = (document.cookie).split(";");
   var ruleset = "piaa-winter";
   var times = "girls";
+  var firstVisit = true;
   for (var i = 0; i < cookies.length; i++) {
     var str = cookies[i].trim();
     var rulesetIndex = str.indexOf("ruleset=");
     var timesIndex = str.indexOf("times=");
+    var visitIndex = str.indexOf("firstvisit=");
     if (rulesetIndex != -1) {
       ruleset = str.substring(rulesetIndex + 8);
     }
     if (timesIndex != -1) {
       times = str.substring(timesIndex + 6);
     }
+    if (visitIndex != -1) {
+      var vstr = str.substring(visitIndex + 11);
+      if (vstr == "false") {
+        firstVisit = false;
+      }
+    }
   }
-  return [ruleset, times];
+  return [ruleset, times, firstVisit];
 }
 
 function updateCookies(ruleset, times) {
@@ -78,6 +89,9 @@ function updateCookies(ruleset, times) {
   cookie += "expires=" + expires.toGMTString() + ";";
   document.cookie = cookie;
   cookie = "ruleset=" + ruleset + ";";
+  cookie += "expires=" + expires.toGMTString() + ";";
+  document.cookie = cookie;
+  cookie = "firstvisit=false;";
   cookie += "expires=" + expires.toGMTString() + ";";
   document.cookie = cookie;
 }

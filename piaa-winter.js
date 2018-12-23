@@ -1,6 +1,7 @@
 function setupRuleset() {
-  $("#distTimesBtn").html("District Times");
+  $("#distTimesBtn").html("District Times"); //Name times button
   $("#rulesetButton").html("PIAA"); //Short Name
+  $("#rulesetChoices").find("[long-name='PIAA Winter']").html("PIAA Winter" + `<i class="fas fa-check"></i>`); //Append check mark
 }
 
 function calculateScores(event) {

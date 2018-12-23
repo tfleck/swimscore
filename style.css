@@ -31,7 +31,7 @@ footer {
   background-color: #343a40;
   flex-shrink: 0;
   width: 100%;
-  margin-top: 50px;
+  margin-top: 75px;
   padding-top: 15px;
   padding-bottom: 10px;
 }
@@ -60,6 +60,12 @@ footer p {
   max-height: 600px;
   overflow-y: auto;
   -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+@media only screen and (max-width:768px) {
+  .table-wrapper {
+    width: 100%;
+  }
 }
 
 .btn-place {
@@ -94,6 +100,12 @@ footer p {
 
 #infobox {
   padding-left: 0px;
+}
+
+@media only screen and (max-width:992px) {
+  #infobox {
+    padding-left: 10px;
+  }
 }
 
 #title {

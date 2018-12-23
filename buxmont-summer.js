@@ -1,6 +1,7 @@
 function setupRuleset() {
-  $("#distTimesBtn").html("Champs Times");
+  $("#distTimesBtn").html("Champs Times"); //Name times button
   $("#rulesetButton").html("BuxMont"); //Short Name
+  $("#rulesetChoices").find("[long-name='BuxMont Summer']").html("BuxMont Summer" + `<i class="fas fa-check"></i>`); //Append check mark
 }
 
 function calculateScores(event) {
