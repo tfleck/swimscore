@@ -96,6 +96,9 @@ function calculateScores(event) {
     }
   }
   if (isRelay) {
+    if (currPts < 2) {
+      currPts = 2;
+    }
     oppPts = (rpts[0] + rpts[1] + rpts[2] + rpts[3] + rpts[4] + rpts[5]) - currPts;
   } else {
     oppPts = (pts[0] + pts[1] + pts[2] + pts[3] + pts[4] + pts[5]) - currPts;
@@ -107,13 +110,14 @@ function calculateScores(event) {
     var oppOldPts = parseInt($("#girlOppScore").text());
     var attrPts = $(event.currentTarget).parents("tr").attr("pts");
     var attrOppPts = $(event.currentTarget).parents("tr").attr("oppPts");
-    var fade = false;
+    var fade = $(event.currentTarget).parents("tr").attr("fade");
     if (attrPts === undefined) {
       attrPts = 0;
-      fade = true;
     }
     if (attrOppPts === undefined) {
       attrOppPts = 0;
+    }
+    if (fade === undefined) {
       fade = true;
     }
     yourOldPts -= attrPts;
@@ -122,10 +126,12 @@ function calculateScores(event) {
     $(event.currentTarget).parents("tr").attr("oppPts", oppPts);
     $("#girlScore").text(yourOldPts + currPts);
     $("#girlOppScore").text(oppOldPts + oppPts);
-    if (num == 3 && fade) {
+    console.log(num + " fade: " + fade);
+    if (num >= 3 && fade != "false") {
       $(event.currentTarget).parents("tr").delay(500).fadeOut(400, function() {
         $('#girlSwimEvents').append($(event.currentTarget).parents("tr"));
         $(event.currentTarget).parents("tr").fadeIn(300);
+        $(event.currentTarget).parents("tr").attr("fade", false);
       });
     }
   } else {
@@ -133,13 +139,14 @@ function calculateScores(event) {
     var oppOldPts = parseInt($("#boyOppScore").text());
     var attrPts = $(event.currentTarget).parents("tr").attr("pts");
     var attrOppPts = $(event.currentTarget).parents("tr").attr("oppPts");
-    var fade = false;
+    var fade = $(event.currentTarget).parents("tr").attr("fade");
     if (attrPts === undefined) {
       attrPts = 0;
-      fade = true;
     }
     if (attrOppPts === undefined) {
       attrOppPts = 0;
+    }
+    if (fade === undefined) {
       fade = true;
     }
     yourOldPts -= attrPts;
@@ -148,10 +155,11 @@ function calculateScores(event) {
     $(event.currentTarget).parents("tr").attr("oppPts", oppPts);
     $("#boyScore").text(yourOldPts + currPts);
     $("#boyOppScore").text(oppOldPts + oppPts);
-    if (num == 3 && fade) {
+    if (num >= 3 && fade != "false") {
       $(event.currentTarget).parents("tr").delay(500).fadeOut(400, function() {
         $('#boySwimEvents').append($(event.currentTarget).parents("tr"));
         $(event.currentTarget).parents("tr").fadeIn(300);
+        $(event.currentTarget).parents("tr").attr("fade", false);
       });
     }
   }
